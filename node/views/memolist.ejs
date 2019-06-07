@@ -7,7 +7,7 @@
   <body>
     <h1>Memo List</h1>
     <form action="" method="POST">
-      <input type="text" name="memo">
+      <input type="text" name="memo" size="100">
       <button type="submit">Submit</button>
     </form>
     <ul>
@@ -18,6 +18,10 @@
           <form action="/memo/delete" metho="GET">
             <input type="hidden" name="id" value="<%= obj._id %>">
             <button type="submit">Delete</button>
+          </form>
+          <form action="/memo/update" metho="GET">
+            <input type="hidden" name="id" value="<%= obj._id %>">
+            <button type="submit">Update</button>
           </form>
         </div>
       </li>
