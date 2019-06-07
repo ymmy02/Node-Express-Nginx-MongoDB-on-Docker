@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memo List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Memo List</h1>
+    <form action="" method="POST">
+      <textarea cols="100" rows="3" name="memo"></textarea>
+      <button type="submit">送信</button>
+    </form>
+    <ul>
+      <% for (var memo of memoList) {%>
+      <li><%= memo %></li>
+      <% } %>
+    </ul>
+  </body>
+</html>
