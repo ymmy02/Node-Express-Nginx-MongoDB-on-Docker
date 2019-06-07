@@ -22,7 +22,7 @@ services:
         working_dir: /src
         depends_on:
             - mongo
-        command: [sh, -c, npm install && npm start]
+        command: [./wait-for-mongo.sh, npm, start]
     mongo:
         image: mongo:4.0.10
         restart: always
