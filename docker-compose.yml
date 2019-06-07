@@ -12,7 +12,10 @@ services:
             - NGINX_HOST=localhost
             - NGINX_PORT=80
     node:
-        image: node:10.16.0-alpine
+        build:
+            context   : ./docker/node
+            dockerfile: Dockerfile
+        image: ymmy/node
         restart: always
         container_name: node
         volumes:

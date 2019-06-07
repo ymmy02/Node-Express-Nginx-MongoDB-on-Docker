@@ -3,8 +3,7 @@
 ## Setup
 
 ```
-$ cd node
-$ npm install
-$ cd ../
+$ mkdir db
+$ docker-compose build
 $ docker-compose up
 ```
