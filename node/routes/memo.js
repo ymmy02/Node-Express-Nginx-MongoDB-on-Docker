@@ -7,9 +7,7 @@ var Memo = model.Memo;
 router.get('/', function(req, res, next) {
     Memo.find({}, function (err, result) {
         if (err) throw err;
-        let memoList = result.map(function(e) {
-            return e['memo'];
-        });
+        const memoList = result;
         res.render('memolist', { memoList: memoList });
     });
 });
@@ -22,6 +20,15 @@ router.post('/', function(req, res, next) {
         if (err) throw err;
     })
     res.redirect('/memo');
+});
+
+router.get('/delete', function(req, res, next) {
+    const id = req.query.id;
+    console.log(id);
+    Memo.findByIdAndRemove(id, function(err) {
+        if (err) throw err;
+        res.redirect('/memo');
+    });
 });
 
 module.exports = router;

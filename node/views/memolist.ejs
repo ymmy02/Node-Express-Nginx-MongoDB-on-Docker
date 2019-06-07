@@ -8,11 +8,19 @@
     <h1>Memo List</h1>
     <form action="" method="POST">
       <input type="text" name="memo">
-      <button type="submit">送信</button>
+      <button type="submit">Submit</button>
     </form>
     <ul>
-      <% for (var memo of memoList) {%>
-      <li><%= memo %></li>
+      <% for (var obj of memoList) {%>
+      <li>
+        <div style="display: inline-flex;">
+          <%= obj.memo %>
+          <form action="/memo/delete" metho="GET">
+            <input type="hidden" name="id" value="<%= obj._id %>">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </li>
       <% } %>
     </ul>
   </body>
